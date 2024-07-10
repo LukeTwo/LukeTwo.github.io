@@ -1,4 +1,141 @@
 <!DOCTYPE HTML>
+<style>
+	h2 {text-align: center;}
+	* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: fixed;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
 <!--
 	Massively by HTML5 UP
 	html5up.net | @ajlkn
@@ -20,7 +157,7 @@
 				<!-- Intro -->
 					<div id="intro">
 						<h1>Luke Twomey Portfolio</h1>
-						<p>Data Analyst skilled in SQL, Programming and PowerBI. This is a work in progress. <a href="https://www.linkedin.com/in/luke-twomey-325233242/" target= "_blank">@LukeTwomey</a>.</p>
+						<p>Software Developer with experience in programming, web consulting/development, mobile app development and database migration. Currently working full time as a Language Data Analyst for Transperfect and part time as a IT support/ Web consultant for a non-profit.. <a href="https://www.linkedin.com/in/luke-twomey-325233242/" target= "_blank">@LukeTwomey</a>.</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -29,7 +166,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
+							<li class="active"><a href="index.html">My Experience</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/in/luke-twomey-325233242/" target= "_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
@@ -38,21 +175,52 @@
 
 				<!-- Main -->
 					<div id="main">
-
+						<h2>MY CV</h2>
 						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<span class="date">October 16, 2022</span>
-									<h2>SQL Data Dive</h2>
-								</header>
-								<a href="https://public.tableau.com/app/profile/luke.twomey/viz/CovidProject_16667850620350/Dashboard1?publish=yes" target="_blank" class="image fit"><img src="images/map.PNG" alt="" /></a>
-								<p>Diving into data related to Covid-19 cases globally and seeing what insights I can find using SQL and Tableau for visuals</p>
-								<ul class="actions special">
-									<li><a href="https://github.com/LukeTwo/PortfolioProjects/blob/main/PortfolioProjectCovid.sql" target="_blank" class="button">View Code</a></li>
-									<li><a href="https://public.tableau.com/app/profile/luke.twomey/viz/CovidProject_16667850620350/Dashboard1?publish=yes" target="_blank" class="button">View Dashboard</a></li>
-								</ul>
-							</article>
+						<div class="image123">
+							<div class="imageContainer">
+								<img src="images/CV1.PNG" alt="CV1" style="width:100%;max-width:600px" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"/>
+							</div>
+							<div class="imageContainer">
+								<img src="images/cv2.PNG" alt="CV2" style="width:100%;max-width:600px" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"/>
+							</div>
+						</div>
+						<div class="repo" style="display: block;">
+							<p>Check out my current project of an Inventory Management WebApp: </p>
+						</div>
+						<h2>MY CV</h2>
+						
+						<embed src="https://luketwo.github.io/assets/luketwomeyDev.pdf" type="application/pdf" />
+						<div id="myModal" class="modal">
+							<span class="close cursor" onclick="closeModal()">&times;</span>
+							<div class="modal-content">
+						  
+							  <div class="mySlides" style="text-align: center;">
+								<div class="numbertext">1 / 2</div>
+								<img src="images/CV1.PNG">
+							  </div>
+						  
+							  <div class="mySlides" style="text-align: center;">
+								<div class="numbertext">2 / 2</div>
+								<img src="images/CV2.PNG">
+							  </div>
+							  
+							  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+							  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+						  
+							  <div class="caption-container">
+								<p id="caption"></p>
+							  </div>
 
+							  <div class="column">
+								<img class="demo cursor" src="images/CV1.PNG" style="width:100%" onclick="currentSlide(1)" alt="CV 1/2">
+							  </div>
+							  <div class="column">
+								<img class="demo cursor" src="images/CV2.PNG" style="width:100%" onclick="currentSlide(2)" alt="CV 2/2">
+							  </div>
+							</div>
+						  </div>
+						  
 						<!-- Posts -->
 						<section class="posts">
 							<article>
@@ -88,19 +256,6 @@
 								<p>Using python to find correlations between a movies gross income and other features</p>
 								<ul class="actions special">
 									<li><a href="https://github.com/LukeTwo/PortfolioProjects/blob/main/PythonDataAnalysis.ipynb" target="_blank" class="button">View Code</a></li>
-								</ul>
-							</article>
-							<article>
-								<header>
-									<span class="date">October 10, 2022</span>
-									<h2>Cyclistic Bikes Analysis</a></h2>
-									<p>Identify if there are any differences on how annual members and casual riders use Cyclistic bikes services.
-									</p>
-								</header>
-								<a href="https://docs.google.com/presentation/d/1xcaGj40ntUKPiQs9cjEUTFx_uKRDbu6oB81GED6aEWw/edit#slide=id.p" target="_blank" class="image main"><img src="images/bike.png" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://docs.google.com/document/d/1NvC_rcF661UW1Gkkhp8SbKUmBeSm0LGUK3GbxZFB2hM/edit?usp=sharing" target="_blank" class="button large">The Process</a></li>
-									<li><a href="https://docs.google.com/presentation/d/1xcaGj40ntUKPiQs9cjEUTFx_uKRDbu6oB81GED6aEWw/edit?usp=sharing" target="_blank" class="button large">The Analysis</a></li>
 								</ul>
 							</article>
 						</section>
@@ -145,6 +300,44 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function openModal() {
+				  document.getElementById("myModal").style.display = "block";
+				}
+				
+				function closeModal() {
+				  document.getElementById("myModal").style.display = "none";
+				}
+				
+				var slideIndex = 1;
+				showSlides(slideIndex);
+				
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+				
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+				
+				function showSlides(n) {
+				  var i;
+				  var slides = document.getElementsByClassName("mySlides");
+				  var dots = document.getElementsByClassName("demo");
+				  var captionText = document.getElementById("caption");
+				  if (n > slides.length) {slideIndex = 1}
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+					  slides[i].style.display = "none";
+				  }
+				  for (i = 0; i < dots.length; i++) {
+					  dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";
+				  dots[slideIndex-1].className += " active";
+				  captionText.innerHTML = dots[slideIndex-1].alt;
+				}
+				</script>
 
 	</body>
 </html>
